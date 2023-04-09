@@ -8,6 +8,7 @@ load(
     "//tensorflow:tensorflow.bzl",
     "tf_copts",
 )
+load("//tensorflow:tensorflow.bzl", "tf_custom_op_library")
 
 package(
     default_visibility = [
@@ -25,4 +26,9 @@ cc_library(
     visibility = ["//tensorflow/core:__pkg__"],
     deps = ["//tensorflow/core:framework"],
     alwayslink = 1,
+)
+
+tf_custom_op_library(
+    name = "zero_out.so",
+    srcs = ["zero_out.cc"],
 )
