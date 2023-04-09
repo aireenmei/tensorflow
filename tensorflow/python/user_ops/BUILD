@@ -2,6 +2,7 @@
 #   Contains User Ops (internal TensorFlow version).
 
 load("//tensorflow/python:build_defs.bzl", "tf_gen_op_wrapper_private_py")
+load("//tensorflow:tensorflow.bzl", "tf_gen_op_wrapper_py")
 
 visibility = [
     "//tensorflow:internal",
@@ -25,5 +26,14 @@ py_library(
         ":user_ops_gen",
         "//tensorflow/python/util",
         "@six_archive//:six",
+    ],
+)
+
+tf_gen_op_wrapper_py(
+    name = "gen_zero_out_ops",
+    out = "gen_zero_out_ops.py",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//tensorflow/core/user_ops:zero_out.so",
     ],
 )
