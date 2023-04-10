@@ -24,6 +24,6 @@ tf_gen_op_wrapper_py(
     name = "gen_zero_out_ops",
     out = "gen_zero_out_ops.py",
     deps = [
-        "//tensorflow/core/user_ops:zero_out_ops.so",
+        "//tensorflow/core/tpu/ops:zero_out_ops.so",
     ],
 )
