@@ -5,13 +5,13 @@ load("//tensorflow/python:build_defs.bzl", "tf_gen_op_wrapper_private_py")
 load("//tensorflow:tensorflow.bzl", "tf_gen_op_wrapper_py")
 
 visibility = [
-    "//tensorflow:internal",
+    "//visibility:public",
 ]
 
 package(
     default_visibility = visibility,
-    licenses = ["notice"],
 )
+licenses(["notice"])
 
 tf_gen_op_wrapper_private_py(
     name = "user_ops_gen",
@@ -32,7 +32,6 @@ py_library(
 tf_gen_op_wrapper_py(
     name = "gen_zero_out_ops",
     out = "gen_zero_out_ops.py",
-    visibility = ["//visibility:public"],
     deps = [
         "//tensorflow/core/user_ops:zero_out_ops.so",
     ],
@@ -41,7 +40,6 @@ tf_gen_op_wrapper_py(
 py_library(
     name = "zero_out_ops_py",
     srcs = ["zero_out_ops.py"],
-    visibility = ["//visibility:public"],
     deps = [
         ":gen_zero_out_ops",
     ],

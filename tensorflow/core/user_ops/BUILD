@@ -13,10 +13,10 @@ load("//tensorflow:tensorflow.bzl", "tf_custom_op_library")
 package(
     default_visibility = [
 #        "//tensorflow/core:__pkg__",
-        ["//visibility:public"]
+        "//visibility:public"
     ],
-    licenses = ["notice"],
 )
+licenses(["notice"])
 
 # One target for all user ops.
 cc_library(
