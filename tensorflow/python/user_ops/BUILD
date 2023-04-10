@@ -37,3 +37,11 @@ tf_gen_op_wrapper_py(
         "//tensorflow/core/user_ops:zero_out.so",
     ],
 )
+
+py_library(
+    name = "zero_out_ops_py",
+    src = "zero_out_ops.py"
+    deps = [
+        ":gen_zero_out_ops"
+    ],
+)
