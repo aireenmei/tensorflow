@@ -12,7 +12,8 @@ load("//tensorflow:tensorflow.bzl", "tf_custom_op_library")
 
 package(
     default_visibility = [
-        "//tensorflow/core:__pkg__",
+#        "//tensorflow/core:__pkg__",
+        ["//visibility:public"]
     ],
     licenses = ["notice"],
 )
@@ -23,7 +24,7 @@ cc_library(
     srcs = glob(["*.cc"]),
     copts = tf_copts(),
     linkstatic = 1,
-    visibility = ["//tensorflow/core:__pkg__"],
+    # visibility = ["//tensorflow/core:__pkg__"],
     deps = ["//tensorflow/core:framework"],
     alwayslink = 1,
 )
