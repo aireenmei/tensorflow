@@ -1,4 +1,5 @@
 load("//tensorflow:tensorflow.bzl", "pytype_library")  # buildifier: disable=same-origin-load
+load("//tensorflow:tensorflow.bzl", "tf_gen_op_wrapper_py")
 
 package(
     default_visibility = [
