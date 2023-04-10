@@ -34,7 +34,7 @@ tf_gen_op_wrapper_py(
     out = "gen_zero_out_ops.py",
     visibility = ["//visibility:public"],
     deps = [
-        "//tensorflow/core/user_ops:zero_out.so",
+        "//tensorflow/core/user_ops:zero_out_ops.so",
     ],
 )
 

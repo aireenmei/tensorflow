@@ -30,6 +30,6 @@ cc_library(
 )
 
 tf_custom_op_library(
-    name = "zero_out.so",
-    srcs = ["zero_out.cc"],
+    name = "zero_out_ops.so",
+    srcs = ["zero_out_ops.cc"],
 )
