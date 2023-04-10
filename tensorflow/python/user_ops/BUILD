@@ -26,6 +26,7 @@ py_library(
         ":user_ops_gen",
         "//tensorflow/python/util",
         "@six_archive//:six",
+        ":gen_zero_out_ops",
     ],
 )
 
