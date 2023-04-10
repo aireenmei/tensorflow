@@ -40,7 +40,8 @@ tf_gen_op_wrapper_py(
 
 py_library(
     name = "zero_out_ops_py",
-    src = "zero_out_ops.py",
+    srcs = ["zero_out_ops.py"],
+    visibility = ["//visibility:public"],
     deps = [
         ":gen_zero_out_ops",
     ],
