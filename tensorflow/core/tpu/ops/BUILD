@@ -16,7 +16,17 @@ cc_library(
         ":tpu_execute_op",
         ":tpu_partitioned_ops",
         ":tpu_reshard_variables_op",
+        ":zero_out_ops",
     ],
+    alwayslink = 1,
+)
+
+cc_library(
+    name = "zero_out_ops",
+    srcs = [
+        "zero_out_ops.cc",
+    ],
+    linkstatic = 1,
     alwayslink = 1,
 )
 
