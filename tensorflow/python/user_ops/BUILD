@@ -42,6 +42,6 @@ py_library(
     name = "zero_out_ops_py",
     src = "zero_out_ops.py"
     deps = [
-        ":gen_zero_out_ops"
+        ":gen_zero_out_ops",
     ],
 )
