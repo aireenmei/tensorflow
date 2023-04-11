@@ -15,15 +15,15 @@ pytype_library(
     deps = [
         ":gen_zero_out_ops",
         "//tensorflow/python:framework_for_generated_wrappers",
-        "//tensorflow/python:tpu_ops_gen",
+        # "//tensorflow/python:tpu_ops_gen",
         "//tensorflow/python/tpu:tpu_function",
     ],
 )
 
-tf_gen_op_wrapper_py(
-    name = "gen_zero_out_ops",
-    out = "gen_zero_out_ops.py",
-    deps = [
-        "//tensorflow/core/tpu/ops:zero_out_ops",
-    ],
-)
+# tf_gen_op_wrapper_py(
+#     name = "gen_zero_out_ops",
+#     out = "gen_zero_out_ops.py",
+#     deps = [
+#         "//tensorflow/core/tpu/ops:zero_out_ops",
+#     ],
+# )
