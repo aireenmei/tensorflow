@@ -25,7 +25,7 @@ limitations under the License.
 
 namespace tensorflow {
 
-REGISTER_OP("ZeroOut")
+REGISTER_OP("ZeroOutZero")
     .Input("to_zero: int32")
     .Output("zeroed: int32")
     .SetShapeFn([](::tensorflow::shape_inference::InferenceContext* c) {
@@ -60,6 +60,6 @@ class ZeroOutOp : public OpKernel {
   }
 };
 
-REGISTER_KERNEL_BUILDER(Name("ZeroOut").Device(DEVICE_CPU), ZeroOutOp);
+REGISTER_KERNEL_BUILDER(Name("ZeroOutZero").Device(DEVICE_CPU), ZeroOutOp);
 
 }  // namespace tensorflow
