@@ -33,3 +33,8 @@ tf_custom_op_library(
     name = "zero_out_ops.so",
     srcs = ["zero_out_ops.cc"],
 )
+
+tf_custom_op_library(
+    name = "batch_and_pack_op.so",
+    srcs = ["batch_and_pack_op.cc"],
+)
