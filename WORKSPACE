@@ -6,7 +6,12 @@ workspace(name = "org_tensorflow")
 # restriction that load() statements need to be at the top of .bzl files.
 # E.g. we can not retrieve a new repository with http_archive and then load()
 # a macro from that repository in the same file.
-load("@//tensorflow:workspace3.bzl", "tf_workspace3")
+# Might be better than http_archive
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+load("//tf:tf_configure.bzl", "tf_configure")
+
+tf_configure(name = "local_config_tf")
 
 # reference to head since the absl/log is newer then the latest release (Abseil LTS 20220623.1)
 http_archive(
@@ -103,6 +108,7 @@ http_archive(
     urls = ["https://github.com/google/highwayhash/archive/276dd7b4b6d330e4734b756e97ccfb1b69cc2e12.zip"],  # 2019-02-22
 )
 
+load("@//tensorflow:workspace3.bzl", "tf_workspace3")
 tf_workspace3()
 
 load("@//tensorflow:workspace2.bzl", "tf_workspace2")
