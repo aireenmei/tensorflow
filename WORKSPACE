@@ -9,10 +9,6 @@ workspace(name = "org_tensorflow")
 # Might be better than http_archive
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
-load("//tf:tf_configure.bzl", "tf_configure")
-
-tf_configure(name = "local_config_tf")
-
 # reference to head since the absl/log is newer then the latest release (Abseil LTS 20220623.1)
 http_archive(
     name = "com_google_absl",
