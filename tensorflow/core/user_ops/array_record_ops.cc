@@ -96,7 +96,7 @@ static Status ArrayRecordLookupShape(InferenceContext* c) {
   TF_RETURN_IF_ERROR(c->WithRankAtMost(c->input(1), 1, &input_shape));
   // Set output shape.
   c->set_output(0, input_shape);
-  return OkStatus();
+  return Status::OK();
 }
 
 REGISTER_OP("ArrayRecordLookup")
@@ -130,7 +130,7 @@ Status GetReadInstructions(const std::string& path,
       std::forward_as_tuple(filename));
   read_instructions.push_back({filename, 0, reader.NumRecords()});
 
-  return OkStatus();
+  return Status::OK();
 }
 
 // Threadsafe cache for values of type tstring.
@@ -202,7 +202,7 @@ class ArrayRecordResource : public ResourceBase {
       total_num_records_ += ri.NumRecords();
     }
     readers_.resize(read_instructions_.size());
-    return OkStatus();
+    return Status::OK();
   }
 
   string DebugString() const override {
@@ -281,7 +281,7 @@ class ArrayRecordResource : public ResourceBase {
     context->device()->tensorflow_cpu_worker_threads()->workers->ParallelFor(
         readers_with_reads.size(), scheduling_params, perform_lookups);
 
-    return OkStatus();
+    return Status::OK();
   }
 
  private:
